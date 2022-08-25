@@ -1,0 +1,59 @@
+<html>
+ <head>
+   <title>Toy shop</title>
+   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+ 
+   <script src="​https://aframe.io/releases/0.6.0/aframe.min.js​"> </script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+
+ <link href="./style.css" rel="stylesheet"/>
+
+ <script src="./js/addButtons.js"></script>
+ <script src="./js/markerhandler.js"></script>
+
+ </head>
+ <body>
+   <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+   sourceWidth:1280; sourceHeight:960; 
+   displayWidth: 1280; displayHeight: 960; 
+   debugUIEnabled: false;" gesture-detector create-buttons>
+
+   <!-- Camera -->
+   <a-entity camera></a-entity>
+
+   <a-marker id="crane-model" type="pattern" url=".assets/mobile_crane_ii_wooden_toy/scene.gltf" cursor="rayOrigin: mouse"> 
+    
+    <a-entity id="crane-3D-model" position="-1 0 0" scale="0.05 0.05 0.05" 
+    gltf-model="#crane-model"
+    gesture-handler>
+  </a-entity>
+  
+  <a-plane position="0 0 0" width="1.5" height="1.5" rotation="-90 0 0">
+   <a-plane position="0 0.89 0.02" width="1.49" height="0.3" rotation="0 0 0" color="#F0C30F">
+     <a-entity position="0 0 0.1" rotation="0 0 0"
+       text="font:monoid;value:HYDRAULIC CRANE;color:black;width: 1.8;height:1;align:center;"></a-entity>
+   </a-plane>
+
+   <a-entity position="0 0 0.1" rotation="0 0 0"
+     text="color: black; align: center; width: 2; font: monoid;
+          value:PULL BACK AND GO: Friction powered
+          truck toy
+          crane 360 degree rotating left and right,machine can pull up and down,swing left and right.High quality material : Funblast crane toy is made of 100% high quality abs plastic and metal shovel which is durable ,light and non0toxic with strong crash resistence/AGE:8-10yrs    ">
+   </a-entity>
+ </a-plane>
+
+</a-marker>
+
+
+</a-scene>
+
+<!-- Button Main Div -->
+<div id="button-div"></div>
+   </body>
+
+</html>
